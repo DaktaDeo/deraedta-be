@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+    vertical-align: middle;
+}
+.dark-img {
+    display: none;
+}
+.light-img {
+    display: block;
+}
+
+.dark-mode .light-img {
+    display: none;
+}
+.dark-mode .dark-img {
+    display: block;
+}
+
+.token.inserted:not(.prefix) {
+    background-color: rgba(4,120,87,0.5);
+    display: block;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+figure {
+    //@apply -ml-8;
+}
+figure > picture > img {
+    @apply rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 mx-auto;
+}
+
+.permalink {
+    @apply text-gray-300 absolute font-light no-underline;
+
+    &:hover {
+        @apply text-gray-600;
+    }
+}
+
+h1 .permalink { margin-left: -33px; }
+h2 .permalink { margin-left: -28px; }
+h3 .permalink { margin-left: -22px; }
+h4 .permalink { margin-left: -22px; }
+h5 .permalink { margin-left: -19px; }
+h6 .permalink { margin-left: -18px; }
+
+.prose h1, h1, .prose h2, h2, .prose h3, h3 {
+    @apply text-gray-900 dark:text-neutral-300;
+}
