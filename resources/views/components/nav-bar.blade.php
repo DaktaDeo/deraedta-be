@@ -5,16 +5,16 @@ $menuItems = [
         'url' => '/articles',
     ],
     [
-        'title' => 'Reviews',
-        'url' => '/reviews',
-    ],
-    [
         'title' => 'Projects',
         'url' => '/projects',
     ],
     [
-        'title' => 'Nantucket',
-        'url' => '/nantucket',
+        'title' => 'Reviews',
+        'url' => '/reviews',
+    ],
+    [
+        'title' => 'FFF',
+        'url' => '/fff',
     ],
     [
         'title' => 'Journal',

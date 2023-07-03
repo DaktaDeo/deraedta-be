@@ -1,18 +1,10 @@
 <div class="w-full text-center  dark:border-t-0 border-t-2 mt-4">
-    <p class="px-4 mb">
-        <span>The DaktaDeo &amp; Multipass logos are copyright </span>
-        <a href="https://daktadeo.be?ref=gompje.be"
-           class="text-gray-400 hover:text-gray-500  dark:text-gray-600">DaktaDeo.</a> 2011–present.
-        <a href="/terms"
-           class="text-gray-400 hover:text-gray-500 border-l-2 pl-2  dark:text-gray-600 dark:border-l-0">
-            Terms &amp; Conditions
-        </a>
-    </p>
+
     <p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#"
-       class="text-gray-400 hover:text-gray-500 pb-12 dark:text-gray-600 px-4 m-0">
+       class=" pt-4 mb text-gray-400 hover:text-gray-500 pb-12 dark:text-gray-600 px-4 m-0">
         This work by
         <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.gompje.be"
-           class="text-gray-400 hover:text-gray-500  dark:text-gray-600">Veerle Deschepper</a>
+           class="text-gray-400 hover:text-gray-500  dark:text-gray-600">Ann Deraedt</a>
         is licensed under
         <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0"
            class="text-gray-400 hover:text-gray-500 gap-2  dark:text-gray-600 inline-flex">
@@ -77,6 +69,10 @@
 			c-4.268,0-6.667,1.885-7.2,5.656h2.343l-6.342,6.343l-6.343-6.343L23.271,23.985L23.271,23.985z"></path>
                     </g>
                 </g></svg>
+        </a>
+        <a href="/terms"
+           class="text-gray-400 hover:text-gray-500 border-l-2 pl-2  dark:text-gray-600 dark:border-l-0">
+            Terms &amp; Conditions
         </a>
     </p>
 </div>
