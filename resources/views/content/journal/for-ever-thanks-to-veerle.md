@@ -15,4 +15,4 @@ All of this time Veerle takes always the time to explain me the IT stuff. Around
 
 I thought I had a lot of patience, but I often put Veerle's patience to the test.
 
-<content-image src="/img/thank-you-veerle.jpg" alt="photo, credits to unsplash"></content-image>
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/4/6/a/9e40f5e8-ed88-462e-9026-5ca258e2b56f.jpg)
