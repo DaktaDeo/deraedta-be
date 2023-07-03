@@ -21,6 +21,6 @@ Dat zet me aan het denken. Ik zit al zoveel. Want lesgeven betekent rondlopen en
 Ik vraag graag aan andere werkgevers die hun thuiswerkers willen soigneren om hun een paar sokken te schenken in plaats van wat zoets. Ik hoor je al denken, "dan valt mijn support aan de lokale handelaar weg". En dat hoeft niet, een sociaal ondernemer zoals Hero-On-Socks help je daarmee vooruit. En het steentje die je hiervoor bijdraagt is een duurzaamheidsresultaat in grondstoffen, de maakindustrie, een organisatie, daklozen in Brussel warme voeten geven, etc....
 
 Ik kijk uit naar de eerstvolgende Crazy Sock Friday met mijn collega's en met een custom-made sokkenpaar van Hero-On-Socks.
-<content-image src="/img/feet-of-home-workers2.png" alt="photo, credits to hero-on-socks"></content-image>
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/2/4/1/4d4891f5-443a-448e-9081-fb5cf323e562.png)
 
 Wil je ook meedoen? Info via [Hero On Socks](https://www.hero-on-socks.com/zakelijk) 
