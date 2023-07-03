@@ -18,6 +18,5 @@ Did a read a book of him? Checking #Goodreads... No
 Did a listen to a Ted Talk? Perhaps, I didn't mark one of his.
 So after all this years I don't know why this person is interesting for me. But the quote is the inspiration for my next sleep.
 
-<content-image src="/img/twitter-adam-grant.jpg" alt="photo, credits to unsplash"></content-image>
-
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/c/c/0/2440f699-a85e-438a-ad7f-a915e544cb2d.jpg)
 Read the tweet: https://twitter.com/AdamMGrant/status/1433771853835812865?ref_src=twsrc%5Etfw
