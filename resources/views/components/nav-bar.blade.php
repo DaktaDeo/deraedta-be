@@ -62,7 +62,7 @@ $menuItems = [
             </div>
         </div>
         <div class="md:flex md:items-center hidden md:block md:pt-10 w-0">
-            <livewire:change-theme/>
+{{--            <livewire:change-theme/>--}}
         </div>
     </div>
 </nav>
