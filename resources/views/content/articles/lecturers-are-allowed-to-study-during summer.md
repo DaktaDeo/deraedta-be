@@ -35,7 +35,6 @@ Het huis van werkgeluk - Fons Leroy
 Tadadada: een werkende Welcomespagina van Multipass, het digitale administratie en contactbeheer systeem voor de kleine, lokale gebruiker zoals een particulier, startup, vereniging of winkel om de hoek. Voor mij was het begrijpen van de backend de winst die ik gerealiseerd heb.
 
 
-
-<content-image src="/img/lecturers-are-allowed-to-study-during-summer.png" alt="photo, credits to unsplash"></content-image>
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/9/2/8/62dd2baa-8900-4e13-a4dd-244431739290.png)
 
 Oh ja, en nieuwsgierig naar de app [Multipass](https://review-develop.multipass.rocks/)? Stuur me een mailtje....
