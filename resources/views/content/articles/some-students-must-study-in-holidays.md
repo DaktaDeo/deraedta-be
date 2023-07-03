@@ -22,8 +22,6 @@ Resultaat: Een grondige kennismaking en basisinzicht voor Statistiek en database
 
 Van mijn kant heb ik geleerd hoe waar het is, als ik mijn expertise mag inzitten op het tempo van de lerende. In dit geval een student maar het had evengoed een medewerker in een bedrijf kunnen zijn. Deze coachend werkwijze geeft zo’n vreugde aan ons beiden. Indirect merkte ik hoe Mathieu spontaan planning goed doet, onder het motto 'al doende leren'. Bij mij rijst wel de vraag waarom deze (coachende) werkwijze minder goed lukt in reguliere lesweken van een schooljaar, zeker bij eerstejaars hoger onderwijs.
 
-<content-image src="/img/some-students-must-study-in-holidays.png" alt="photo, credits to unsplash"></content-image>
-
-Ter aanvulling: de kennis die Mathieu opgedaan heeft en verder doorgeeft, kan je lezen op https://webmaatwerk.com/mathieunijs/category/lindedin-learning/
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/1/2/4/4a4bdeb7-39cf-462a-a502-406a8ee722c0.png)
 
 
