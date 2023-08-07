@@ -16,4 +16,4 @@ tags:
 Het programma van het symposium vind je hier: [blended care](https://www.howest.be/nl/blendedcare). Thema is blended care in de geestelijke gezondheidszorg.
 <content-image src="/img/digitalskills.jpg" alt="digitalskills"></content-image>
 
-[Download the slides (PDF)](https://deraedta.be/info/digitalskillshulpverlener-slides.pdf)
+[Download the slides (PDF)](https://cdn.multipass.rocks/deraedta/info/digitalskillshulpverlener-slides.pdf)
