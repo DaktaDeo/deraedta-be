@@ -1,10 +1,10 @@
 ---
 title: Fietsen langs de Weser
 author: Ann Deraedt
-date: 2021-08-04T20:31:14+00:00
+date: 2022-07-27T20:31:14+00:00
 url: 'fietsen-langs-de-weser'
 tags:
-  - Network Economy
+  - Vrije tijd
 blurb:
     text: 'My source of inspiration for the VUCA world. 30 minutes episodes.'
 
