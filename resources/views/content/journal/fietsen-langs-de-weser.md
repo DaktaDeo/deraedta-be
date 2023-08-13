@@ -6,13 +6,15 @@ url: 'fietsen-langs-de-weser'
 tags:
   - Vrije tijd
 blurb:
-    text: 'My source of inspiration for the VUCA world. 30 minutes episodes.'
+    text: 'Ulli and Ann lives 20 years together: Celebration cycling tour in Germanay.'
 
 ---
-My collegue Rogier De Langhe post an interesting link to a Podcast in the Microsoft Teams session for students Network Economy.
-Curious as I am, I listen because he is one of my examples for truly understand the Platform Economy.
+Enerzijds leerden we elkaar 20 jaar geleden kennen. Anderzijds willen we nog heel wat plaatsen in Duitsland bezoeken. Toevallig kunnen we naar een documentaire van de Weser en zo is het plan gegroeid om een fietstocht te doen. Ulli heeft in 20 dagen alles grondig voorbereid. Alleen het weer kan je niet voorspellen. We zijn gestart met 32 graden hete zomerdagen en geëindigd bij 16 graden regen.
 
-Since that time the episodes "Harvard Business Ideacast" are my partner when i walk or do the gardening. An episode is maximum 30 minutes. It's the perfect time for physical effort without load.
+Hieronder een greep uit onze fietsdagen. Gemiddeld 50 km per dag. In totaal 1000 km in 20 dagen. Er waren ook rustdagen voorzien om een stad en vrienden te bezoeken.
 
-![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/6/4/0/1ce0c6b9-45db-42c2-bca7-d91324e97455.png)
-Al stories on: https://hbr.org/2018/01/podcast-ideacast
+Met de trein van Kortrijk naar Welkenraedt. Dan fietsen naar Aachen.
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/5/e/8/863b7734-2543-4650-b37f-1ab453a23c78-preview.jpg)
+
+Met de trein van Aachen naar Kassel. 1 dag een verkenningstocht van Kassel.
+![alt](https://cdn.beta.multipass.rocks/drive/ne-kernteam/f/4/6/conversions/220c215b-eeb6-4aba-9f01-1421caba6859-preview.jpg)
