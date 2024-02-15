@@ -9,7 +9,7 @@ export default defineConfig({
                     'resources/css/app.scss',
                     'resources/js/app.js',
                 ],
-                valetTls: 'deraedta-be.test',
+                detectTls: 'deraedta-be.test',
                 refresh: true,
             }
         ),
