@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/02cb5b511b.js" crossorigin="anonymous"></script>
     @vite(['resources/js/app.js'])
 
-    <title>Deraedta.be - {{$pageTitle}}</title>
+    <title>{{ $title }}</title>
     @stack('endHead')
     @livewireStyles
 </head>
