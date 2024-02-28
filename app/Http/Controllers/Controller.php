@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\PostsRepository;
-use DaktaDeo\LaravelMultipassConnector\Actions\FindWebMenuInTreeWithSlug;
+use DaktaDeo\LaravelMultipassConnector\Actions\FindWebmenuInTreeWithSlug;
 use DaktaDeo\LaravelMultipassConnector\Repositories\WebsiteRepository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -53,7 +53,7 @@ class Controller extends BaseController
         ray($wantedSlug)->green();
 
         //find the webmenu with the given slug
-        $menu = app(FindWebMenuInTreeWithSlug::class)($website, $wantedSlug);
+        $menu = app(FindWebmenuInTreeWithSlug::class)($website, $wantedSlug);
 
         ray($menu)->orange();
 
@@ -63,7 +63,7 @@ class Controller extends BaseController
         }
 
         //fetch the associated webcontent
-        $content = app(WebsiteRepository::class)->getCompleteWebContent($menu->web_content_id);
+        $content = app(WebsiteRepository::class)->getCompleteWebcontent($menu->webcontent_id);
 
         ray($content)->green();
         //return 404 if the content has no id
