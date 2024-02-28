@@ -28,19 +28,19 @@
                             <div class="flex mt-1 text-gray-500 text-xs mb-2 gap-2">
                                 <x-relative-time :date-time="$item->publish_date" prefix="Published →"/>
 
-{{--                                    <div>--}}
-{{--                                        {{$item->readingTime}} min read--}}
-{{--                                    </div>--}}
+                                    <div>
+                                        {{$item->reading_time}} min read
+                                    </div>
                             </div>
 
-                                <a href="/{{$item->view}}"
+                                <a href="/{{$item->slug}}"
                                    class=" text-gray-900 dark:text-gray-200 text-xl font-bold no-underline hover:underline hover:text-indigo-400 dark:hover:text-indigo-400 ">
                                     {{ $item->title }}
                                 </a>
                         </div>
 
                             <div class="text-base leading-normal mt-1">
-{{--                                {{ $item->excerpt }}--}}
+                                {!! $item->excerpt_html !!}
                             </div>
 
                             <div class="text-base leading-normal mt-2">
