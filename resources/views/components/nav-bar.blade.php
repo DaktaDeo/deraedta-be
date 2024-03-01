@@ -1,29 +1,7 @@
 <?php
-$menuItems = [
-    [
-        'title' => 'Articles',
-        'url' => '/articles',
-    ],
-    [
-        'title' => 'Projects',
-        'url' => '/projects',
-    ],
-    [
-        'title' => 'Reviews',
-        'url' => '/reviews',
-    ],
-    [
-        'title' => 'FFF',
-        'url' => '/fff',
-    ],
-    [
-        'title' => 'Journal',
-        'url' => '/journal',
-    ],
-];
+// find the first webmenu in the $websiteModel with as system_menu_type = 'top_menu'
+$menu = $websiteModel->getTopMenu();
 ?>
-
-
 <nav class="border-b mb-12 md:border-0 dark:border-gray-700">
     <div class="flex container max-w-screen-lg mx-auto justify-between h-14">
         <div  class="container flex justify-between h-14 flex-grow md:flex-shrink">
@@ -50,11 +28,11 @@ $menuItems = [
                 <ul class="md:flex text-gray-700 dark:text-gray-200 text-base mr-3 md:mx-auto"
                     :class="showMenu ? 'drop-shadow-xl block absolute top-14 z-50 border-b dark:border-gray-700 md:border-0 bg-gray-100 dark:bg-gray-800 w-full p-2 pl-4' : 'hidden'"
                     id="navbar-main" x-cloak>
-                    @foreach($menuItems as $item)
+                    @foreach($menu->children as $item)
                         <li class="p-0 m-0">
-                            <a href="{{$item['url']}}"
+                            <a href="/{{$item->slug}}"
                                class="dark:border-neutral-300 border-neutral-300 pl-0 md:px-4 dark:border-gray-700 md:pt-12 border-t md:border-0 inline-block w-full py-2  hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 focus:outline-none focus:text-gray-900 dark:focus:text-gray-100 transition ease-in-out duration-150">
-                                {{$item['title']}}
+                                {{$item->publicname}}
                             </a>
                         </li>
                     @endforeach

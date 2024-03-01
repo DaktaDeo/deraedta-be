@@ -38,6 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchWebsiteModel::class,
+            \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchHomePageWebcontentModel::class
         ],
 
         'api' => [
@@ -67,5 +68,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'fetchWebsiteModel' => \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchWebsiteModel::class,
+        'fetchHomePageWebcontentModel' => \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchHomePageWebcontentModel::class,
     ];
 }

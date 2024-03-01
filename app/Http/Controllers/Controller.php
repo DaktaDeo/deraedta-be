@@ -43,6 +43,24 @@ class Controller extends BaseController
         ]);
     }
 
+    public function showWelcome(Request $request)
+    {
+        $website = $request->attributes->get('websiteModel');
+
+        $homePageWebcontentModel = $request->attributes->get('homePageWebcontentModel');
+
+        if ($homePageWebcontentModel) {
+            $items = app(WebsiteRepository::class)->query($homePageWebcontentModel->query);
+        } else {
+            $items = [];
+        }
+
+        return view('templates.page', [
+            'items' => $items,
+            'content' => $homePageWebcontentModel,
+        ]);
+    }
+
     public function handleDynamicContent(Request $request, $any = 'index')
     {
         $pathSegments = explode('/', $any);
@@ -50,37 +68,44 @@ class Controller extends BaseController
 
         $website = $request->attributes->get('websiteModel');
 
-        ray($wantedSlug)->green();
+        //        ray($wantedSlug)->green();
 
         //find the webmenu with the given slug
         $menu = app(FindWebmenuInTreeWithSlug::class)($website, $wantedSlug);
 
-        ray($menu)->orange();
+        $webcontent_id = data_get($menu, 'webcontent_id', -1);
 
-        //return 404 if the menu is not found for now
-        if (! $menu->id) {
+        if ($webcontent_id < 0) {
+            // the $website->webcontent_map contains a map of all the webcontent models as an associative array
+            $arr = collect($website->webcontent_map)->firstWhere('slug', $wantedSlug) ?? [];
+            $webcontent_id = data_get($arr, 'id', -1);
+
+//            ray($webcontent_id)->purple();
+        }
+
+        if ($webcontent_id < 0) {
             abort(404);
         }
 
         //fetch the associated webcontent
-        $content = app(WebsiteRepository::class)->getCompleteWebcontent($menu->webcontent_id);
+        $content = app(WebsiteRepository::class)->getCompleteWebcontent($webcontent_id);
 
-        ray($content)->green();
         //return 404 if the content has no id
         if (! $content->id) {
             abort(404);
         }
 
         // for now, lets assume that the content is a list
-        ray($content->query)->purple();
         $items = app(WebsiteRepository::class)->query($content->query);
 
         // future me: remember that the query will limit the fields requested but the resource will
         // still map all the fields, making some fields NULL while they are not in the query.
 
-        ray($items)->green();
+        //        ray($items)->green();
 
-        return view('templates.list', [
+        $system_content_type = data_get($content, 'system_content_type', 'page');
+
+        return view("templates.$system_content_type", [
             'content' => $content,
             'items' => $items,
         ]);

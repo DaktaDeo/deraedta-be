@@ -28,12 +28,14 @@
                             <div class="flex mt-1 text-gray-500 text-xs mb-2 gap-2">
                                 <x-relative-time :date-time="$item->publish_date" prefix="Published →"/>
 
+                                @if($item->reading_time > 0)
                                     <div>
                                         {{$item->reading_time}} min read
                                     </div>
+                                @endif
                             </div>
 
-                                <a href="/{{$item->slug}}"
+                                <a href="/{{$content->slug}}/{{$item->slug}}"
                                    class=" text-gray-900 dark:text-gray-200 text-xl font-bold no-underline hover:underline hover:text-indigo-400 dark:hover:text-indigo-400 ">
                                     {{ $item->title }}
                                 </a>
@@ -44,7 +46,7 @@
                             </div>
 
                             <div class="text-base leading-normal mt-2">
-                                <a href="/{{$item->slug}}"
+                                <a href="/{{$content->slug}}/{{$item->slug}}"
                                    class=" text-gray-900 dark:text-gray-200 hover:text-indigo-400 dark:hover:text-indigo-400 text-sm no-underline hover:underline "
                                    style="outline-width: 0px !important; user-select: auto !important;"
                                 >
