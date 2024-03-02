@@ -46,25 +46,22 @@ class Controller extends BaseController
     public function showWelcome(Request $request)
     {
         $website = $request->attributes->get('websiteModel');
-        //        $homePageWebcontentModel = $request->attributes->get('homePageWebcontentModel');
+        $homePageWebcontentModel = $request->attributes->get('homePageWebcontentModel');
 
-        //hack to get it to work on the server
-        $content = app(WebsiteRepository::class)->getCompleteWebcontent(28);
-
-        if ($content) {
-            $items = app(WebsiteRepository::class)->query($content->query);
+        if ($homePageWebcontentModel) {
+            $items = app(WebsiteRepository::class)->query($homePageWebcontentModel->query);
         } else {
             $items = [];
         }
 
         // show 404 if the home page webcontent model is not found
-        if (! $content) {
+        if (! $homePageWebcontentModel) {
             abort(404);
         }
 
         return view('templates.page', [
             'items' => $items,
-            'content' => $content,
+            'content' => $homePageWebcontentModel,
         ]);
     }
 
@@ -87,7 +84,7 @@ class Controller extends BaseController
             $arr = collect($website->webcontent_map)->firstWhere('slug', $wantedSlug) ?? [];
             $webcontent_id = data_get($arr, 'id', -1);
 
-            //            ray($webcontent_id)->purple();
+//            ray($webcontent_id)->purple();
         }
 
         if ($webcontent_id < 0) {
