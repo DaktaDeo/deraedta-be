@@ -11,6 +11,8 @@
     <meta name="keywords" content="{{ $websiteModel->keywords }}">
 @endif
 
-@foreach($websiteModel->meta_tags as $key => $value)
-    <meta name="{{ $key }}" content="{{ $value }}">
-@endforeach
+@if(!empty($websiteModel->meta_tags))
+    @foreach($websiteModel->meta_tags as $key => $value)
+        <meta name="{{ $key }}" content="{{ $value }}">
+    @endforeach
+@endif

@@ -46,13 +46,17 @@ class Controller extends BaseController
     public function showWelcome(Request $request)
     {
         $website = $request->attributes->get('websiteModel');
-
         $homePageWebcontentModel = $request->attributes->get('homePageWebcontentModel');
 
         if ($homePageWebcontentModel) {
             $items = app(WebsiteRepository::class)->query($homePageWebcontentModel->query);
         } else {
             $items = [];
+        }
+
+        // show 404 if the home page webcontent model is not found
+        if (! $homePageWebcontentModel) {
+            abort(404);
         }
 
         return view('templates.page', [
