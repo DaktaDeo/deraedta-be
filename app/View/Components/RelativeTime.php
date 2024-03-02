@@ -18,6 +18,16 @@ class RelativeTime extends Component
 
     public function __construct($dateTime = null, ?string $prefix = '', ?string $suffix = '')
     {
+        // if $dateTime is anything not a Carbon instance, we will try to parse it
+        if (! ($dateTime instanceof Carbon) && $dateTime !== null) {
+            $dateTime = Carbon::parse($dateTime);
+        }
+
+        // if $dateTime is not a Carbon instance, we will set it to null
+        if (! ($dateTime instanceof Carbon)) {
+            $dateTime = null;
+        }
+
         $this->dateTime = $dateTime;
         $this->hasDateTime = $dateTime !== null;
 

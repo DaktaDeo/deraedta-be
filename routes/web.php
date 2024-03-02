@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use DaktaDeo\LaravelMultipassConnector\Repositories\WebsiteRepository;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'show'])->name('home');
+Route::get('/', [Controller::class, 'showWelcome'])->name('home');
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
@@ -22,6 +23,15 @@ Route::get('/', [Controller::class, 'show'])->name('home');
 
 //require __DIR__.'/auth.php';
 
-Route::get('/{any?}', [Controller::class, 'show'])->where([
+//Route::get('/articles-2', function () {
+//    // test route to check if the query endpoint in MP is working
+//    // mock a webmenu item
+//    $query = 'filter[labels.id]=81,84&include=labels&fields[webcontents]=id,title,slug';
+//    //    $query ='filter[title]=test';
+//
+//    return app(WebsiteRepository::class)->query($query);
+//});
+
+Route::get('/{any?}', [Controller::class, 'handleDynamicContent'])->where([
     'any' => '.+',
 ])->name('any');

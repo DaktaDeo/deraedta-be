@@ -9,10 +9,9 @@
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/02cb5b511b.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    @vite(['resources/js/app.js'])
 
-    <title>Deraedta.be - {{$pageTitle}}</title>
+    <title>{{ $title }}</title>
     @stack('endHead')
     @livewireStyles
 </head>

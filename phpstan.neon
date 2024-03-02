@@ -1,0 +1,44 @@
+#includes:
+#	- phpstan-baseline.neon
+
+parameters:
+    # Level 9 is the highest level
+    level: 5
+
+    paths:
+        - app/
+    excludePaths:
+        analyse:
+            - Http/Controllers/Automations/
+            - Http/App/
+            - app/Domain/Website/
+            - app/Domain/Templates/
+            - app/Domain/TransactionalMail/
+            - app/Domain/Audience/
+            - app/Domain/Automation/
+            - app/Domain/Campaign/
+            - app/Domain/Integrations/
+            - app/Domain/Webhooks/
+    tmpDir: build/phpstan
+    checkOctaneCompatibility: false
+    checkModelProperties: true
+    checkMissingIterableValueType: false
+#    checkUnusedViews: true
+
+    ignoreErrors:
+        - '#Call to an undefined method Illuminate\\Support\\HigherOrder#'
+        - '#PHPDoc tag @var#'
+        - '#Attribute class JetBrains\\PhpStorm\\ArrayShape does not exist#'
+        - '#Access to an undefined property Illuminate\\Database\\Eloquent\\Model#'
+        - '#Call to an undefined method Illuminate\\Database\\Eloquent\\Model#'
+        - '#^Parameter .* of class App\\Domain\\.* expects App\\Domain\\.*, Illuminate\\Database\\Eloquent\\Model given\.$#'
+        - '#^Method App\\Domain\\.* should return App\\Domain\\.* but returns Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+        - '#^Method App\\Domain\\.* should return App\\Domain\\.* but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+
+
+#			message: "#^Method App\\\\Domain\\\\Inventory\\\\Actions\\\\UpdateProduct\\:\\:update\\(\\) should return App\\\\Domain\\\\Inventory\\\\Models\\\\Product but returns Illuminate\\\\Database\\\\Eloquent\\\\Model\\.$#"
+#
+#    excludePaths:
+#        - ./*/*/FileToBeExcluded.php
+#
+#    checkMissingIterableValueType: false

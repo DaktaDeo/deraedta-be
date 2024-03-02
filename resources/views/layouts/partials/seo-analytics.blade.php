@@ -7,7 +7,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-0YK35XJ4H1');
+        gtag('config', {{$websiteModel->google_analytics}});
     </script>
 
 @endif
