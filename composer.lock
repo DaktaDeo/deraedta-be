@@ -339,12 +339,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:DaktaDeo/laravel-multipass-connector.git",
-                "reference": "a21c9825cc5a053e0cd644d532e6910a590d5f3a"
+                "reference": "6f74382bd2ef51f5f8738290ca3e8ce750b91256"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DaktaDeo/laravel-multipass-connector/zipball/a21c9825cc5a053e0cd644d532e6910a590d5f3a",
-                "reference": "a21c9825cc5a053e0cd644d532e6910a590d5f3a",
+                "url": "https://api.github.com/repos/DaktaDeo/laravel-multipass-connector/zipball/6f74382bd2ef51f5f8738290ca3e8ce750b91256",
+                "reference": "6f74382bd2ef51f5f8738290ca3e8ce750b91256",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
                 "source": "https://github.com/DaktaDeo/laravel-multipass-connector/tree/master",
                 "issues": "https://github.com/DaktaDeo/laravel-multipass-connector/issues"
             },
-            "time": "2024-03-02T15:15:04+00:00"
+            "time": "2024-03-02T18:37:00+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
