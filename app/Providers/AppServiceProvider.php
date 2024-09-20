@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\View\Components\RegisterWizardComponent;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,5 +37,19 @@ class AppServiceProvider extends ServiceProvider
             $title = $websiteTitle.($pageTitle ? ' - '.$pageTitle : '');
             $view->with('title', $title);
         });
+
+        // Make every nested array a collection, easier to work with
+        Collection::macro('recursive', function () {
+            return $this->map(function ($value) {
+                if (is_array($value) || is_object($value)) {
+                    return collect($value)->recursive();
+                }
+
+                return $value;
+            });
+        });
+
+        // register the wizard component
+        Livewire::component('register-wizard', RegisterWizardComponent::class);
     }
 }

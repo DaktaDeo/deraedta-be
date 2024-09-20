@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchWebsiteModel::class,
-            \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchHomePageWebcontentModel::class
+            \DaktaDeo\LaravelMultipassConnector\Http\Middleware\FetchLinkedHomePageWebcontentModel::class
         ],
 
         'api' => [

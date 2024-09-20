@@ -1,53 +1,103 @@
-<?php
-// find the first webmenu in the $websiteModel with as system_menu_type = 'top_menu'
-$menu = $websiteModel->getTopMenu();
-?>
 @if($menu)
-    <nav class="border-b mb-12 md:border-0 dark:border-gray-700">
-        <div class="flex container max-w-screen-lg mx-auto justify-between h-14">
-            <div class="container flex justify-between h-14 flex-grow md:flex-shrink">
-                <!-- Nav Links-->
-                <div class="flex flex-grow" x-data="{showMenu : false}">
-                    <!-- Brand-->
-                    <x-site-logo/>
-                    <!-- Navbar Toggle Button -->
-                    <button @click="showMenu = !showMenu"
-                            class="block md:hidden text-gray-700 rounded w-10/12 dark:text-gray-200"
-                            type="button"
-                            aria-controls="navbar-main"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <div class="flex justify-end text-right p-2  py-2 pr-5">
-                            <svg class="w-5 h-4"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 viewBox="0 0 24 24"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
+    <nav class="relative"
+         x-data="{ open: null, mobileOpen: false, isTouch: 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 }">
+        <!-- Mobile Toggle Button -->
+        <div class="lg:hidden flex justify-between items-center p-4">
+            <div class="text-lg font-semibold">Menu</div>
+            <button @click="mobileOpen = !mobileOpen" class="focus:outline-none">
+                <svg class="w-6 h-6"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path x-show="!mobileOpen"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path x-show="mobileOpen"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden lg:flex flex-col lg:flex-row justify-center lg:justify-center pl-0 my-0 w-full text-jeans-800 leading-7 text-left space-x-2">
+            @foreach ($sortedItems as $key => $item)
+                <li class="group">
+                    <a @mouseenter="!isTouch && (open = {{ $key }})"
+                       @mouseleave="!isTouch && (open = null)"
+                       @click="if (isTouch && {{ count($item->children) }} > 0) { open = open === {{ $key }} ? null : {{ $key }}; event.preventDefault(); }"
+                       :class="{'border-b-3 border-silence-600': open === {{ $key }}}"
+                       class="inline-block py-6 px-4 lg:px-2 cursor-pointer transition-all duration-200 tracking-wide uppercase text-lg font-medium"
+                       href="{{ $item->url }}">
+                        {{ $item->publicname }}
+                        <span class="block h-1 bg-silence-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200"></span>
+                    </a>
+                    @if (count($item->children) > 0)
+                        <div x-show="open === {{ $key }}"
+                             @mouseenter="!isTouch && (open = {{ $key }})"
+                             @mouseleave="!isTouch && (open = null)"
+                             class="lg:absolute left-0 lg:left-0 lg:right-0 top-full bg-silence-10 shadow-md hidden lg:block w-full max-w-5xl"
+                             x-transition:enter="transition ease-out duration-200"
+                             x-transition:enter-start="opacity-0 transform scale-95"
+                             x-transition:enter-end="opacity-100 transform scale-100"
+                             x-transition:leave="transition ease-in duration-150"
+                             x-transition:leave-start="opacity-100 transform scale-100"
+                             x-transition:leave-end="opacity-0 transform scale-95">
+                            <div class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                @foreach ($item->children as $child)
+                                    <a href="{{ $child->url }}"
+                                       class="block p-4 hover:bg-silence-200/20 hover:text-silence-900 transition-colors duration-200">
+                                        <div class="uppercase tracking-wide text-lg font-medium">{{ $child->publicname }}</div>
+                                        <p class="text-md text-jeans-500">{{ $child->description ?? '' }}</p>
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
-                    </button>
-
-                    <ul class="md:flex text-gray-700 dark:text-gray-200 text-base mr-3 md:mx-auto"
-                        :class="showMenu ? 'drop-shadow-xl block absolute top-14 z-50 border-b dark:border-gray-700 md:border-0 bg-gray-100 dark:bg-gray-800 w-full p-2 pl-4' : 'hidden'"
-                        id="navbar-main" x-cloak>
-                        @foreach($menu->children as $item)
-                            <li class="p-0 m-0">
-                                <a href="/{{$item->slug}}"
-                                   class="dark:border-neutral-300 border-neutral-300 pl-0 md:px-4 dark:border-gray-700 md:pt-12 border-t md:border-0 inline-block w-full py-2  hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 focus:outline-none focus:text-gray-900 dark:focus:text-gray-100 transition ease-in-out duration-150">
-                                    {{$item->publicname}}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="md:flex md:items-center hidden md:block md:pt-10 w-0">
-                {{--            <livewire:change-theme/>--}}
-            </div>
+                    @endif
+                </li>
+            @endforeach
+        </ul>
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileOpen"
+             class="fixed inset-0 bg-silence-10 flex flex-col justify-center items-center lg:hidden z-50">
+            <button @click="mobileOpen = false" class="absolute top-4 right-4 text-silence-900">
+                <svg class="w-8 h-8"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <ul class="space-y-4 text-silence-900 mx-auto">
+                @foreach ($sortedItems as $key => $item)
+                    <li>
+                        <a @click="open = open === {{ $key }} ? null : {{ $key }}"
+                           class="block cursor-pointer text-2xl font-semibold">
+                            {{ $item->publicname }}
+                        </a>
+                        @if (count($item->children) > 0)
+                            <ul x-show="open === {{ $key }}" class="mt-2 space-y-2">
+                                @foreach ($item->children as $child)
+                                    <li>
+                                        <a href="{{ $child->url }}"
+                                           class="block py-2 px-4 rounded text-silence-900 transition-colors duration-200">
+                                            {{ $child->publicname }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </nav>
 @endif

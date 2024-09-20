@@ -10,7 +10,7 @@ class ParseMarkdownFile extends FileAction
 {
     public function __invoke(array $fileAttributes): Post
     {
-        $post = new Post();
+        $post = new Post;
 
         $post->view = data_get($fileAttributes, 'view', 'index');
         $post->key = data_get($fileAttributes, 'pk', 0);
