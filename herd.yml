@@ -1,0 +1,5 @@
+integrations:
+  forge:
+    deraedta.be:
+      server-id: 534081
+      site-id: 1562454
